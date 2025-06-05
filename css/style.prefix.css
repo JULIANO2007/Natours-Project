@@ -1042,14 +1042,28 @@ body {
   visibility: hidden;
   -webkit-transform: translateY(-4rem);
           transform: translateY(-4rem); }
+.form__group--radio {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-start;
+  align-items: flex-start; /* Ini menjaga agar item sejajar kiri secara vertikal */
+  margin-bottom: 2rem;
+  padding-left: 0; /* tambahkan ini jika ada padding bawaan */
+}
 
-.form__radio-group {
-  width: 49%;
-  display: inline-block; }
-  @media only screen and (max-width: 56.25em) {
-    .form__radio-group {
-      width: 100%;
-      margin-bottom: 2rem; } }
+/* Media query-nya sudah oke, tapi ini lebih baik dipisah rapi */
+@media only screen and (max-width: 56.25em) {
+  .form__group--radio {
+    flex-direction: column;       /* <== tambahkan ini agar radio button stack di mobile */
+    align-items: flex-start;      /* <== tetap sejajar kiri di mobile */
+  }
+
+  .form__radio-group {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+
 
 .form__radio-input {
   display: none; }

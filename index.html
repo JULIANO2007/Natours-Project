@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+    <style>
+        html {
+  scroll-behavior: smooth;
+}
+
+    </style>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,28 +34,30 @@
             <nav class="navigation__nav">
                 <ul class="navigation__list">
                     <li class="navigation__item"><a href="#about" class="navigation__link"><span>01</span>About Natous</a></li>
-                    <li class="navigation__item"><a href="#features" class="navigation__link"><span>02</span>Your benfits</a></li>
+                    <li class="navigation__item"><a href="" class="navigation__link"><span>02</span>Your benefits</a></li>
                     <li class="navigation__item"><a href="#section-tours" class="navigation__link"><span>03</span>Popular tours</a></li>
                     <li class="navigation__item"><a href="#stories" class="navigation__link"><span>04</span>Stories</a></li>
                     <li class="navigation__item"><a href="#booking" class="navigation__link"><span>05</span>Book now</a></li>
                     </ul>
             </nav>
         </div>
+<header class="header" id="home">
+    <div class="header__logo-box">
+        <a href="#home">
+            <img src="img/logo-white.png" alt="Logo" class="header__logo">
+        </a>
+    </div>
 
-        <header class="header">
-            <div class="header__logo-box">
-                <img src="img/logo-white.png" alt="Logo" class="header__logo">
-            </div>
+    <div class="header__text-box">
+        <h1 class="heading-primary">
+            <span class="heading-primary--main">Outdoors</span>
+            <span class="heading-primary--sub">is where life happens</span>
+        </h1>
 
-            <div class="header__text-box">
-                <h1 class="heading-primary">
-                    <span class="heading-primary--main">Outdoors</span>
-                    <span class="heading-primary--sub">is where life happens</span>
-                </h1>
+        <a href="#section-tours" class="btn btn--white btn--animated">Discover our tours</a>
+    </div>
+</header>
 
-                <a href="#section-tours" class="btn btn--white btn--animated">Discover our tours</a>
-            </div>
-        </header>
 
 
 
@@ -318,9 +326,10 @@
             </section>
 
             <section class="section-book" id="booking">
-                <style>.radio-group-wrapper {
+                <style>
+                .radio-group-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 4rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -363,7 +372,7 @@
                 <div class="row">
                     <div class="book">
                         <div class="book__form">
-                            <form action="#" class="form">
+<form class="form">
                                 <div class="u-margin-bottom-medium">
                                     <h2 class="heading-secondary">
                                         Start booking now
@@ -382,19 +391,20 @@
 
                                 <div class="form__group u-margin-bottom-medium">
                                     <div class="form__group">
- <div class="radio-group-wrapper">
-  <label class="radio-option">
-    <input type="radio" name="size" value="small">
+<div class="radio-group-wrapper">
+  <label class="radio-option" for="size-small">
+    <input type="radio" name="size" value="small" id="size-small">
     <span class="custom-radio"></span>
     Small tour group
   </label>
 
-  <label class="radio-option">
-    <input type="radio" name="size" value="large">
+  <label class="radio-option" for="size-large">
+    <input type="radio" name="size" value="large" id="size-large">
     <span class="custom-radio"></span>
     Large tour group
   </label>
 </div>
+
 
 
                                 </div>
@@ -469,6 +479,13 @@
                 </div>
             </div>
         </div>
+
+        <script>
+  document.querySelector('.form').addEventListener('submit', function(e) {
+    e.preventDefault(); // cegah scroll atau reload
+  });
+</script>
+
 
         <!--
         <section class="grid-test">
